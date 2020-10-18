@@ -59,4 +59,4 @@ jobs:
     - name: Build Main classes
       run: ./gradlew jar
     - name: Validate
-      run: ./gradlew validate
+      run: ./gradlew check
