@@ -57,6 +57,24 @@ publishing {
     }
 }
 
+sourceSets {
+    test {
+        java {
+            srcDirs = ["src/test/java/org/springframework/samples/petclinic", "src/test/jmeter"]
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging.showStandardStreams = true
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
