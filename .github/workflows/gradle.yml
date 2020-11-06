@@ -80,7 +80,7 @@ jobs:
       - name: Build Test classes
         run: ./gradlew testClasses
       - name: Sonar analysis
-        run: ./gradlew sonarqube -Dsonar.host.url=http://f2dc1f998574.ngrok.io -Dsonar.verbose=true -Dsonar.log.console=true
+        run: ./gradlew sonarqube -Dsonar.host.url=http://f2dc1f998574.ngrok.io  -Dsonar.analysis.mode=preview -Dsonar.issuesReport.console.enable=true
   
   coverage:
     
