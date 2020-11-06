@@ -7,6 +7,17 @@ plugins {
     id 'maven-publish'
     id 'org.springframework.boot' version '2.1.9.RELEASE'
     id "org.sonarqube" version "3.0"
+    id 'eclipse'
+    id 'jacoco'
+}
+
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/jacoco")
+}
+
+jacocoTestReport {
+    dependsOn test
 }
 
 repositories {
@@ -74,6 +85,8 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+    
+    finalizedBy jacocoTestReport
 }
 
 tasks.withType(JavaCompile) {
