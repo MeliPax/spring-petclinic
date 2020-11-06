@@ -11,6 +11,14 @@ plugins {
     id 'jacoco'
 }
 
+sonarqube {
+    properties {
+        property "sonar.projectKey", "ezeveliz_spring-petclinic"
+        property "sonar.organization", "ezeveliz"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
 jacoco {
     toolVersion = "0.8.5"
     reportsDir = file("$buildDir/jacoco")
