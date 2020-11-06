@@ -68,7 +68,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: docker://sonarqube:latest
       - uses: actions/checkout@v2
       - name: Set up JDK 1.11
         uses: actions/setup-java@v1
@@ -81,4 +80,4 @@ jobs:
       - name: Build Test classes
         run: ./gradlew testClasses
       - name: Sonar analysis
-        run: ./gradlew sonarqube
+        run: ./gradlew sonarqube -Dsonar.host.url=http://f2dc1f998574.ngrok.io
