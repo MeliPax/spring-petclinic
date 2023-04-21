@@ -22,7 +22,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                sh 'java -jar target/*.jar &'
+                sh 'java -Dserver.port=9090 -jar target/*.jar &'
                 echo 'PetClinic application started'
             }
         }
